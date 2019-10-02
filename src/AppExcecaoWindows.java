@@ -9,9 +9,9 @@ public class AppExcecaoWindows {
         String s2 = teclado.nextLine();
         String [] vetorS = new String[2];
         vetorS[0] = s1;
-        vetorS[0] = s2;
+        vetorS[1] = s2;
 
-        divideArray(vetorS);
+        System.out.print (divideArray(vetorS));
     }
 
     private static int divideArray(String[] array) {

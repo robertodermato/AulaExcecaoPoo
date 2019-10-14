@@ -36,18 +36,21 @@ public class Exercicio5TiposDeExcecoes {
         double result = Fatorial.fatorial(x);
         System.out.println("Fatorial de "+x+" = "+result);
 
+        //Exceção não verificada
+        int [] inteiros = new int[3];
+        try{
+            System.out.println(inteiros[-1]);
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Índice fora do valor");
+        }
+
         //Fibonacci recursivo - Tentando stackOverflow
         System.out.print ("Informe qual termo da série Fibonacci você quer ver: ");
         int termo = 2;
         System.out.println ("O " + termo + " termo da série de Fibonacci é: " + fibo(termo));
 
-        //Exceção não verificada
-        int [] inteiros = new int[3];
-        try{
-        System.out.println(inteiros[-1]);}
-        catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Índice fora do valor");
-        }
+
 
 
 

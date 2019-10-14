@@ -8,7 +8,14 @@ public class AppContaCorrente {
             System.out.println("O saldo informado deve ser maior que zero");
         }
 
+        try {
+            ContaCorrente conta3 = new ContaCorrente(-10); //Gera o erro de saldo inicial menor que zero
+        } catch(IllegalArgumentException e){
+            System.out.println("O saldo informado deve ser maior que zero");
+        }
+
         ContaCorrente conta2 = new ContaCorrente(10);
+        ContaCorrente conta4 = new ContaCorrente(10);
 
         try {
             conta2.deposito(0); // gera erro de deposito igual a zero
@@ -28,8 +35,8 @@ public class AppContaCorrente {
             System.out.println("Retirada deve ser menor que o saldo!!");
         }
 
-
-
+        System.out.println("Número de tentativas de criação de contas: " + ContaCorrente.contaTentativaContas);
+        System.out.println("Número de contas criadas com sucesso: " + ContaCorrente.contaContas);
 
     }
 }

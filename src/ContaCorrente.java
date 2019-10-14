@@ -8,12 +8,16 @@
 public class ContaCorrente {
 
     private double saldo;
+    public static int contaContas = 0;
+    public static int contaTentativaContas = 0;
+
 
     public ContaCorrente(double saldoInicial) {
         if (saldoInicial<0){
+            contaTentativaContas++;
             throw new IllegalArgumentException("Saldo inicial deve ser maior ou igual a zero!");
         }
-        else saldo = saldoInicial;
+        else {saldo = saldoInicial; contaContas++; contaTentativaContas++;}
     }
 
     public void deposito(double valor) {

@@ -13,28 +13,28 @@ public class ContaCorrente {
 
 
     public ContaCorrente(double saldoInicial) {
-        if (saldoInicial<0){
+        if (saldoInicial < 0) {
             contaTentativaContas++;
             throw new IllegalArgumentException("Saldo inicial deve ser maior ou igual a zero!");
+        } else {
+            saldo = saldoInicial;
+            contaContas++;
+            contaTentativaContas++;
         }
-        else {saldo = saldoInicial; contaContas++; contaTentativaContas++;}
     }
 
     public void deposito(double valor) {
-        if (valor<=0){
+        if (valor <= 0) {
             throw new IllegalArgumentException("Depósito deve ser maior que zero!");
-        }
-        else saldo += valor;
+        } else saldo += valor;
     }
 
     public void retirada(double valor) {
-        if (valor<=0){
+        if (valor <= 0) {
             throw new IllegalArgumentException("Retirada deve ser maior que zero!");
-        }
-        else if (saldo-valor<0){
+        } else if (saldo - valor < 0) {
             throw new IllegalArgumentException("Retirada deve ser menor ou igual ao saldo atual!");
-        }
-        else saldo -= valor;
+        } else saldo -= valor;
     }
 
     public double getSaldo() {
